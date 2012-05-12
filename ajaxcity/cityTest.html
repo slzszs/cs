@@ -1,0 +1,40 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/ajaxcity.jquery.js"></script>
+        <script type="text/javascript">
+            var url = 'city.php';
+            var provinceurl = url + '?a=province';
+            var cityurl = url + '?a=city&pid=';
+            var areaurl = url + '?a=area&pid=';
+            var city_config = {
+                    //必须的参数
+                    'province':'province_dev',
+                    //不同情况下可选的参数
+                    'city':'city_dev',
+                    'area':'area_dev',
+                    'default_province':'1',
+                    'default_city':'2',
+                    'hidden_province':true,
+                    'hidden_city':true			
+            };
+            window.onload = function(){
+                $('#city_select_dev').ajax_city_select({
+                        'province':'province3',
+                        'city':'city3',
+                        'area':'area3'
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="city_select_dev"></div>
+    </body>
+</html>

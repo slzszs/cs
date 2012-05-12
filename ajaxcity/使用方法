@@ -1,0 +1,108 @@
+数据源公共配置
+	var url = 'city.php';
+	var provinceurl = url + '?a=province';
+	var cityurl = url + '?a=city&pid=';
+	var areaurl = url + '?a=area&pid=';
+		
+参数配置
+	var city_config = {
+		//必须的参数
+		'province':'province_dev',
+		
+		//不同情况下可选的参数			
+		'city':'city_dev',
+		'area':'area_dev',
+		'default_province':'1',
+		'default_city':'2'
+		'hidden_province':true,
+		'hidden_city':true			
+	};
+调用插件
+	$('#city_select_dev').ajax_city_select(city_config);
+
+应用演示
+    1 ：只显示省
+        $('#city_select_only_province').ajax_city_select({
+                'province':'province1'
+        });
+    1.1 ：只显示省 配置默认省
+        $('#city_select_only_province1').ajax_city_select({
+                'province':'province11',		
+                'default_province':'2'	
+        });
+    2 ：显示省、城市
+        $('#city_select_province_city').ajax_city_select({
+                'province':'province2',
+                'city':'city2'
+        }); 
+    2.1 ：显示省、城市 配置默认省
+        $('#city_select_province_city1').ajax_city_select({
+                'province':'province21',
+                'city':'city21',
+                'default_province':'2'
+        }); 
+    2.2 ：显示省、城市 配置默认省、默认城市
+        $('#city_select_province_city2').ajax_city_select({
+                'province':'province22',
+                'city':'city22',
+                'default_province':'2',
+                'default_city':'3'
+        });
+    3 ：显示省、城市、区域
+        $('#city_select_province_city_area').ajax_city_select({
+                'province':'province3',
+                'city':'city3',
+                'area':'area3'
+        }); 
+   3.1 ：显示省、城市、区域，配置默认省
+        $('#city_select_province_city_area1').ajax_city_select({
+                'province':'province31',
+                'city':'city31',
+                'area':'area31',
+                'default_province':'2'
+        });
+    3.2 ：显示省、城市、区域，配置默认省 默认城市
+        $('#city_select_province_city_area2').ajax_city_select({
+                'province':'province32',
+                'city':'city32',
+                'area':'area32',
+                'default_province':'5',
+                'default_city':'3'
+        });
+    3.3 ：显示省、城市、区域，配置默认省 默认城市 默认区域
+        $('#city_select_province_city_area3').ajax_city_select({
+                'province':'province33',
+                'city':'city33',
+                'area':'area33',
+                'default_province':'5',
+                'default_city':'3',
+                'default_area':'5'				
+        }); 
+    4 ：配置默认省 隐藏省 显示城市
+        $('#city_select_default_province').ajax_city_select({
+                'province':'province4',
+                'city':'city4',
+                'default_province':'2',
+                'hidden_province':true
+        });
+    5 ：配置默认省、默认城市 隐藏省、城市 显示区域
+        $('#city_select_default_province_city').ajax_city_select({
+                'province':'province5',
+                'city':'city5',
+                'area':'area5',
+                'default_province':'5',
+                'default_city':'3',
+                'hidden_province':true,
+                'hidden_city':true
+        });
+    5.1 ：配置默认省、默认城市、默认区域 隐藏省、城市
+        $('#city_select_default_province_city2').ajax_city_select({
+                'province':'province51',
+                'city':'city51',
+                'area':'area51',
+                'default_province':'5',
+                'default_city':'3',
+                'default_area':'5',
+                'hidden_province':true,
+                'hidden_city':true
+        });
